@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cantada pro cê</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="pagina2">
+
+<audio id="musica2" loop>
+    <source src="musica/musica2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CONTEÚDO NORMAL DA PÁGINA -->
+<div class="galeria-animada">
+    <img src="img/gatinho1.png" class="foto-animada">
+    <img src="img/gatinho2.png" class="foto-animada">
+    <img src="img/gatinho3.png" class="foto-animada">
+</div>
+
+<canvas id="fogosCanvas"></canvas>
+
+<script src="script.js"></script>
+
+<script>
+const musica2 = document.getElementById("musica2");
+musica2.volume = 0.4;
+
+function iniciarMusica2() {
+    musica2.play().catch(() => {});
+    document.removeEventListener("click", iniciarMusica2);
+    document.removeEventListener("touchstart", iniciarMusica2);
+}
+
+document.addEventListener("click", iniciarMusica2);
+document.addEventListener("touchstart", iniciarMusica2);
+</script>
+
+</body>
+</html>
